@@ -3,8 +3,10 @@ services:
     name: spring-boot-app
     env: docker
     plan: free
-    buildCommand: ./mvnw clean install
+    buildCommand: mvn clean install
     startCommand: java -jar target/*.jar
     envVars:
       - key: JAVA_VERSION
         value: 17
+      - key: JAVA_HOME
+        value: /opt/render/project/java
