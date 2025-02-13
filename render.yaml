@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: spring-boot-app
+    name: my-spring-boot-app
     env: java
     plan: free
     buildCommand: "./mvnw clean install"
