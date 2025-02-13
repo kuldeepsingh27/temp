@@ -3,8 +3,8 @@ services:
     name: my-spring-boot-app
     env: java
     plan: free
-    buildCommand: "./mvnw clean install"
-    startCommand: "java -jar target/demo-0.0.1-SNAPSHOT.jar"
+    buildCommand: "export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac)))) && ./mvnw clean install"
+    startCommand: "java -jar target/demo-0.0.1-SNAPSHOT.jar.original"
     envVars:
       - key: JAVA_HOME
-        value: /opt/render/project/.java-buildpack/open_jdk_jre
+        value: "/opt/render/project/.java-buildpack/open_jdk_jre"
